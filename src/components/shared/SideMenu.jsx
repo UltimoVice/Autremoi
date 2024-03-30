@@ -1,13 +1,39 @@
+import { useState } from "react";
 import { LiSideMenu } from "./LiSideMenu";
+import { LiSubMenu } from "./LiSubMenu";
 
-export const SideMenu = () => {
+export const SideMenu = ({ isMenuOpen, setIsMenuOpen }) => {
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+
+  const focusSubMenu = () => {
+    setIsSubMenuOpen(!isSubMenuOpen);
+  };
+
+  const blurSubMenu = () => {
+    setIsSubMenuOpen(!isSubMenuOpen);
+  };
+
+  const toggleSideMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
-    <div className="translate-x-0 transition-all duration-500 ease-in min-h-full">
+    <div
+      id="sideMenu"
+      className={`${
+        isMenuOpen
+          ? "left-0 pointer-events-auto translate-x-0"
+          : "-left-full pointer-events-none translate-x-full"
+      } transition-all duration-500 absolute top-0`}
+    >
       <div className="transition-opacity duration-200 delay-200 ease-in">
-        <div className="h-full">
+        <div className="h-full flex flex-row">
+          {/* Primo Menù */}
           <div className="bg-white min-h-full relative pt-28 px-5 pb-10 w-80 z-[3]">
             <div className="block absolute top-1">
-              <button className="cursor-pointer flex items-center h-12 justify-center ">
+              <button
+                onClick={toggleSideMenu}
+                className="cursor-pointer flex items-center h-12 justify-center "
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -35,7 +61,15 @@ export const SideMenu = () => {
               </div>
             </div>
           </div>
-          <div></div>
+          {/* Secondo Menù */}
+          <div className="bg-white min-h-full relative pt-28 px-5 pb-10 w-80 z-[2]">
+            <LiSubMenu
+              elements={["Novita Uomo", "Novità Donna", "Visualizza Tutto"]}
+              onFocusSubMenu={focusSubMenu}
+              onBlurSubMenu={blurSubMenu}
+              isSubMenuOpen={isSubMenuOpen}
+            />
+          </div>
         </div>
       </div>
     </div>
