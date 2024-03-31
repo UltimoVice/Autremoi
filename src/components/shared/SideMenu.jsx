@@ -19,7 +19,7 @@ export const SideMenu = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <div
       id="sideMenu"
-      className={`${
+      className={`h-full ${
         isMenuOpen
           ? "left-0 pointer-events-auto translate-x-0"
           : "-left-full pointer-events-none translate-x-full"
@@ -62,7 +62,7 @@ export const SideMenu = ({ isMenuOpen, setIsMenuOpen }) => {
             </div>
           </div>
           {/* Secondo Menù */}
-          <div className="bg-white min-h-full relative pt-28 px-5 pb-10 w-80 z-[2]">
+          
             <LiSubMenu
               elements={["Novita Uomo", "Novità Donna", "Visualizza Tutto"]}
               onFocusSubMenu={focusSubMenu}
@@ -72,6 +72,6 @@ export const SideMenu = ({ isMenuOpen, setIsMenuOpen }) => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };

@@ -27,7 +27,7 @@ export const LiSideMenu = ({ name }) => {
         onBlur={handleFocusOff}
       >
         <span
-          className={`font-normal text-base ${focus ? " font-extrabold" : ""}`}
+          className={`text-base ${focus ? "font-extrabold" : "font-normal"}`}
         >
           {name}
           <img

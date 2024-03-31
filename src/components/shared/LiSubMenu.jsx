@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-export const LiSubMenu = ({ elements, onFocusSubMenu, onBlurSubMenu, isSubMenuOpen }) => {
+export const LiSubMenu = ({
+  elements,
+  onFocusSubMenu,
+  onBlurSubMenu,
+  isSubMenuOpen,
+}) => {
   const [showUnderlines, setShowUnderlines] = useState(
     elements.map(() => false)
   );
@@ -21,8 +26,10 @@ export const LiSubMenu = ({ elements, onFocusSubMenu, onBlurSubMenu, isSubMenuOp
 
   return (
     <div
-      className={`overflow-auto h-full ${
-        isSubMenuOpen ? "left-0 pointer-events-auto translate-x-0" : "-left-[90%] pointer-events-auto translate-x-full"
+      className={`overflow-auto h-full bg-white min-h-full relative pt-28 px-5 pb-10 w-80 z-[2] ${
+        isSubMenuOpen
+          ? "left-0 pointer-events-none translate-x-0"
+          : "-left-[100%] pointer-events-auto translate-x-full"
       } transition-all duration-500 absolute`}
       onFocus={onFocusSubMenu}
       onBlur={onBlurSubMenu}
