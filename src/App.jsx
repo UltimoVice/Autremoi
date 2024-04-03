@@ -1,3 +1,4 @@
+import { BannerPub } from "./components/shared/BannerPub";
 import { Story } from "./components/shared/Story";
 import { TwoGender } from "./components/shared/TwoGender";
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <TwoGender/>
       <Story/>
+      <BannerPub/>
     </div>
   );
 }

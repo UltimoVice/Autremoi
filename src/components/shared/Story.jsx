@@ -2,7 +2,7 @@ import React from "react";
 
 export const Story = () => {
   return (
-    <div className="flex w-full h-[800px]">
+    <div className="flex w-full h-[800px] py-6">
       <div className="w-1/2 h-full relative">
         <img className="w-full h-full" src="src\assets\story.jpg" alt="story" />
       </div>
