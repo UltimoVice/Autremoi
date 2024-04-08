@@ -52,7 +52,7 @@ export const Navbar = () => {
         </div>
         <div className="flex justify-center flex-col">
           <img
-            src="src\assets\logo_autremoi.png"
+            src="src\assets\logoSpesso.png"
             alt=""
             className="bg-transparent max-w-[100px] max-h-20 self-center"
           />
