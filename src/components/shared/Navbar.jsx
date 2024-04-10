@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { SideMenu } from "./SideMenu";
+import { SearchMenu } from "./SearchMenu";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
 
   const toggleSideMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleSearchMenu = () => {
+    setIsSearchOpen(!isSearchOpen);
   };
   return (
     <div>
@@ -36,7 +42,7 @@ export const Navbar = () => {
             </button>
           </div>
           <div className="ml-4">
-            <button className="cursor-pointer">
+            <button onClick={()=> toggleSearchMenu('searchMenu')} className="cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -119,6 +125,7 @@ export const Navbar = () => {
         </div>
       </div>
       <SideMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <SearchMenu isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
     </div>
   );
 };

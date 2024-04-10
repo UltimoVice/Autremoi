@@ -169,8 +169,8 @@ export const SideMenu = ({ isMenuOpen, setIsMenuOpen }) => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="24"
+                  height="24"
                   fill="currentColor"
                   className="bi bi-x-lg"
                   viewBox="0 0 16 16"
