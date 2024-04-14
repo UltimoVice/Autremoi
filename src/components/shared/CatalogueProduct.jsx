@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const CatalogueProduct = ({ src, productName, price }) => {
+export const CatalogueProduct = ({ src, productName, price, link }) => {
   const [opacity, setOpacity] = useState(false)
   
   
@@ -12,7 +12,7 @@ export const CatalogueProduct = ({ src, productName, price }) => {
     return (
     <div className="relative text-center overflow-hidden p-2">
       <div className="mb-5 overflow-hidden relative">
-        <Link to="/">
+        <Link to={`${link}`}>
           <div className="h-[528px] overflow-hidden relative w-[457px] cursor-pointer bg-black" onMouseOver={toggleOpacity} onMouseOut={toggleOpacity} >
             <img
               className="w-full h-full border-none block left-0 object-cover absolute top-0 hover:scale-125 transition-transform duration-300"

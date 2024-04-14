@@ -6,6 +6,7 @@ import AdminLayout from "./layouts/AdminLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import UserDashboard from "./pages/users/UserDashboard";
 import NewsCatalogue from "./components/shared/NewsCatalogue";
+import ProductALineOfLiberty from "./components/shared/ProductALineOfLiberty";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
-          <Route path="news" element={<NewsCatalogue />}/>
+          <Route path="news" element={<NewsCatalogue />} />
+          <Route path="A-LineofLiberty" element={<ProductALineOfLiberty />} />
         </Route>
         <Route path="/user" element={<UserLayout />}>
           <Route path="" element={<AdminDashboard />} />
