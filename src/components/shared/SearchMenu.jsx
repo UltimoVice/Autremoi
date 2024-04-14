@@ -90,7 +90,7 @@ export const SearchMenu = ({ isSearchOpen, setIsSearchOpen }) => {
                     <Link className='hover:underline' to="/">Home</Link>
                   </LiSideMenu>
                   <LiSideMenu>
-                    <Link className='hover:underline' to="/">Novità</Link>
+                    <Link className='hover:underline' to="/news">Novità</Link>
                   </LiSideMenu>
                   <LiSideMenu>
                     <Link className='hover:underline' to="/">Donna</Link>
@@ -98,14 +98,6 @@ export const SearchMenu = ({ isSearchOpen, setIsSearchOpen }) => {
                   <LiSideMenu>
                     <Link className='hover:underline' to="/">Informazioni sulle spedizioni</Link>
                   </LiSideMenu>
-
-                  {/* <LiSideMenu name={"Novità"} elementKey="news" />
-                  <LiSideMenu name={"Uomo"} elementKey="man" />
-                  <LiSideMenu name={"Donna"} elementKey="woman" />
-                  <LiSideMenu
-                    name={"Informazioni sulle spedizioni"}
-                    elementKey="infoShipments"
-                  /> */}
                 </ul>
               </div>
             </div>

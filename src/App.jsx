@@ -5,6 +5,7 @@ import UserLayout from "./layouts/UserLayout";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import UserDashboard from "./pages/users/UserDashboard";
+import NewsCatalogue from "./components/shared/NewsCatalogue";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
+          <Route path="news" element={<NewsCatalogue />}/>
         </Route>
         <Route path="/user" element={<UserLayout />}>
           <Route path="" element={<AdminDashboard />} />

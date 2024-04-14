@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SideMenu } from "./SideMenu";
 import { SearchMenu } from "./SearchMenu";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,7 +57,8 @@ export const Navbar = () => {
             </button>
           </div>
         </div>
-        <div className="flex justify-center flex-col">
+        <Link to='/'>
+        <div className="flex justify-center flex-col cursor-pointer">
           <img
             src="src\assets\logoSpesso.png"
             alt=""
@@ -68,6 +70,7 @@ export const Navbar = () => {
             </span>
           </div>
         </div>
+        </Link>
         <div className="flex justify-end w-[50%]">
           <div className="flex items-center">
             <div className="p-2">
