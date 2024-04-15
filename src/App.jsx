@@ -7,6 +7,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import UserDashboard from "./pages/users/UserDashboard";
 import NewsCatalogue from "./components/shared/NewsCatalogue";
 import ProductALineOfLiberty from "./components/shared/ProductALineOfLiberty";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
+          <Route path="login" element={<Login />} />
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="A-LineofLiberty" element={<ProductALineOfLiberty />} />
         </Route>

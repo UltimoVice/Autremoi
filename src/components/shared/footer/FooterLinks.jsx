@@ -19,13 +19,13 @@ export const FooterLinks = ({ name, url, elementKey, children }) => {
   };
 
   return (
-    <div className="mb-5">
+    <div className="mb-4 w-3/4               ">
       {children ? (
         children
       ) : (
         <a
           href={url}
-          className={`cursor-pointer relative decoration-transparent font-normal text-sm flex justify-between leading-6 text-left`}
+          className={`inline-block relative decoration-transparent font-normal text-sm leading-6 text-center`}
           onMouseOver={handleOverUnderline}
           onMouseOut={handleOutUnderline}
           onFocus={handleFocusOn}
@@ -33,7 +33,7 @@ export const FooterLinks = ({ name, url, elementKey, children }) => {
           onClick={() => liSubToggle(elementKey)}
         >
           <span
-            className={`text-base ${focus ? "font-extrabold" : "font-normal"}`}
+            className={`text-base inline-block ${focus ? "font-extrabold" : "font-normal"}`}
           >
             {name}
             <img
