@@ -1,7 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { products } from "../../data";
 
-const ProductALineOfLiberty = () => {
+const Product = () => {
+  const params = useParams();
+
+  const product = products.find(p => p.id == params.id)
+
   return (
     <div>
       <div className="mx-auto mt-6 mb-8 max-w-full px-6">
@@ -44,7 +49,7 @@ const ProductALineOfLiberty = () => {
               <div className="relative">
                 <div className="flex overflow-hidden w-full">
                   <img
-                    src="src\assets\A-Line of Liberty.jpg"
+                    src={`/src/assets/${product.images[0]}`}
                     className="cursor-zoom-in"
                   />
                 </div>
@@ -53,7 +58,7 @@ const ProductALineOfLiberty = () => {
             <div className="relative w-1/3">
               <div className="flex items-start justify-between">
                 <h2 className=" text-3xl leading-5 font-normal mb-4 pr-10">
-                  A-Line of Liberty
+                  {product.title}
                 </h2>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +74,7 @@ const ProductALineOfLiberty = () => {
               <div className="">
                 <div className=" items-baseline flex flex-wrap relative">
                   <span className="m-0 inline-block whitespace-nowrap">
-                    230 €
+                    {product.price / 100} €
                   </span>
                 </div>
               </div>
@@ -114,18 +119,18 @@ const ProductALineOfLiberty = () => {
                     </h2>
                     <div className=" h-96 block relative overflow-hidden font-normal leading-6 pt-4 text-sm">
                       <div className=" overflow-hidden pr-4 pb-5">
-                        <p className=" mb-4">Questa felpa rossa e nera incarna l'essenza dell'eleganza contemporanea. Realizzata con materiali pregiati e una lavorazione artigianale impeccabile, offre un comfort senza pari e uno stile distintivo. Con il suo design audace e sofisticato, è un'icona di lusso discreto e sofisticato.</p>
+                        <p className=" mb-4">{product.description}</p>
                       </div>
                       <div className=" leading-6 mb-4">
                         <ul className="pl-4 mb-4 list-disc">
-                          <li className="mb-2">Design audace</li>
-                          <li className="mb-2">Materiali pregiati</li>
-                          <li className="mb-2">Lavorazione artigianale impeccabile</li>
-                          <li className="mb-2">Comfort senza pari</li>
-                          <li className="mb-2">Stile distintivo</li>
+                          {
+                            product.features.map((feature,idx )=> (
+                              <li key={idx} className="mb-2">{feature}</li>
+                            ))
+                          } 
                         </ul>
                       </div>
-                      <p className="">Codice: <span>93724581063</span></p>
+                      <p className="">Codice: <span>{product.sku}</span></p>
                     </div>
                   </div>
                 </div>
@@ -138,4 +143,4 @@ const ProductALineOfLiberty = () => {
   );
 };
 
-export default ProductALineOfLiberty;
+export default Product;
