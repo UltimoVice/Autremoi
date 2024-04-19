@@ -2,10 +2,14 @@ import { useState } from "react";
 import { SideMenu } from "./SideMenu";
 import { SearchMenu } from "./SearchMenu";
 import { Link } from "react-router-dom";
+import { RightBar } from "../rightElements/RightBar";
+import Cart from "../rightElements/Cart";
+
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isCartOpen, setIsCartOpen] = useState(false)
 
   const toggleSideMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,6 +18,12 @@ export const Navbar = () => {
   const toggleSearchMenu = () => {
     setIsSearchOpen(!isSearchOpen);
   };
+
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
   return (
     <div>
       <div className="bg-transparent flex justify-between max-w-full w-full h-36 px-6 mb-5 font-sans bg-gradient-to-b from-[rgba(0,0,0,0.24)] to-transparent">
@@ -43,7 +53,7 @@ export const Navbar = () => {
             </button>
           </div>
           <div className="ml-4">
-            <button onClick={()=> toggleSearchMenu('searchMenu')} className="cursor-pointer">
+            <button onClick={() => toggleSearchMenu('searchMenu')} className="cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -58,18 +68,18 @@ export const Navbar = () => {
           </div>
         </div>
         <Link to='/'>
-        <div className="flex justify-center flex-col cursor-pointer">
-          <img
-            src="src\assets\logoSpesso.png"
-            alt=""
-            className="bg-transparent max-w-[100px] max-h-20 self-center"
-          />
-          <div className="flex">
-            <span className="flex justify-center text-5xl items-center font-serif">
-              Autremoi
-            </span>
+          <div className="flex justify-center flex-col cursor-pointer">
+            <img
+              src="src\assets\logoSpesso.png"
+              alt=""
+              className="bg-transparent max-w-[100px] max-h-20 self-center"
+            />
+            <div className="flex">
+              <span className="flex justify-center text-5xl items-center font-serif">
+                Autremoi
+              </span>
+            </div>
           </div>
-        </div>
         </Link>
         <div className="flex justify-end w-[50%]">
           <div className="flex items-center">
@@ -109,7 +119,9 @@ export const Navbar = () => {
             </div>
             <div className="p-2">
               <a
+                id="cart"
                 href=""
+                onClick={() => toggleCart("cart")}
                 className="flex cursor-pointer items-center justify-center"
               >
                 <svg
@@ -129,6 +141,9 @@ export const Navbar = () => {
       </div>
       <SideMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <SearchMenu isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
+      <RightBar isBarOpen={isCartOpen} setIsBarOpen={setIsCartOpen}>
+        <Cart />
+      </RightBar>
     </div>
   );
 };
