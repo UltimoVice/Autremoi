@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Story = () => {
   return (
@@ -6,7 +7,7 @@ export const Story = () => {
       <div className="w-1/2 h-full relative">
         <img className="w-full h-full" src="src\assets\story.jpg" alt="story" />
       </div>
-      <div className="w-1/2 h-full relative bg-orange-300">
+      <div className="flex flex-col justify-center items-center w-1/2 h-full relative bg-orange-300">
         <h2 className="font-bold flex justify-center items-center p-6 pt-48 text-2xl">AUTREMOI: STILE ELEGANTE ED INNOVATIVO</h2>
         <h3 className="font-semibold flex justify-center text-center items-center p-2 text-xl italic">NATO NEL 2024</h3>
         <p className="text-center p-4">
@@ -15,7 +16,9 @@ export const Story = () => {
         <p className="text-center p-4">
           Scopri la nostra collezione Autremoi, dove il passato si fonde con il presente per creare l'essenza della moda contemporanea.
         </p>
-        <a className="flex justify-center items-center text-center p-4 underline hover:text-orange-600 hover:underline hover:font-semibold" href="https://www.example.com">Scopri di più</a>
+        <Link to="/story">
+        <a className=" text-center p-4 underline hover:text-orange-600 hover:underline hover:font-semibold max-w-40" href="https://www.example.com">Scopri di più</a>
+        </Link>
       </div>
     </div>
   );

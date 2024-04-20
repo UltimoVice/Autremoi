@@ -1,0 +1,44 @@
+https://www.it.forzieri.com/      riferimento
+
+marketplace o gestione negozio?
+gestione negozio con gestione cassa
+
+funzionalità e sezioni?
+
+PARTE PUBLICA
+pagina principale per attirare l'attenzione dell'utente
+[pagina prodotti 
+pagina ricerca 
+pagina categorie prodotti]
+pagina del prodotto singolo con info, recensioni, like o votazioni
+
+PARTE UTENTE (solo se l'utente fa il login)
+carrello
+gestione profilo utente
+storico ordini
+
+PARTE VENDITORE (solo se il venditore fa il login)
+pagina dashboard principale (preview delle vendite e utenti)
+pagina gestione prodotti (magazzino ecc...)
+pagina gestione corrieri
+? pagina gestione cassa (se ci arriviamo)
+gestione utenti
+pagina degli ordini => dettaglio ordine
+pagina wallet (fa vedere l'elenco delle transazioni utente con storico e grafico dell'andamento)
+gestione codici sconto
+
+
+
+
+
+
+Navbar levis
+banner 
+scroll nuovi arrivi
+in evidenza con infinite scroll
+storia
+footer
+
+
+opacity per le categorie
+zoom per i prodotti
