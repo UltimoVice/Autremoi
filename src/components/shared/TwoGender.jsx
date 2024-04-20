@@ -13,7 +13,7 @@ export const TwoGender = () => {
   };
 
   return (
-    <div className="flex w-full h-[800px] py-6">
+    <div className="flex w-full h-[900px] py-6">
       <div
         className="w-1/2 h-full p-2 relative"
         onMouseOver={handleHoverMale}
