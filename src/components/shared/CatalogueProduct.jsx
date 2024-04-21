@@ -12,7 +12,7 @@ export const CatalogueProduct = ({ id }) => {
   }
   
     return (
-    <div className="relative text-center overflow-hidden p-2">
+    <div className="relative text-center overflow-hidden p-2 min-w-[457px]">
       <div className="mb-5 overflow-hidden relative">
         <Link to={`/products/${id}`}>
           <div className="h-[528px] overflow-hidden relative w-[457px] cursor-pointer bg-black" onMouseOver={toggleOpacity} onMouseOut={toggleOpacity} >
