@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import {React,  useState } from 'react'
+import { Link } from "react-router-dom";
+
 
 const Cart = (items) => {
   const products = [
@@ -18,7 +20,7 @@ const Cart = (items) => {
       <div>
         {products.map((item, i) => (
           <div key={i}>
-            <img src={item.src} alt="" />
+            <img className="w-5 h-5" src={item.src} alt="" />
             <h4>{item.productName}</h4>
 
             <Link to={item.id}>{`Go to the product`}</Link>
@@ -34,7 +36,7 @@ const Cart = (items) => {
           <div>
             <div>
               <div>Subtotal</div>
-              <div>{items.reduce((item, a) => (item.price + a, 0))}
+              <div>{products.reduce((item, a) => (item.price + a, 0))}
               </div>
             </div>
           </div>

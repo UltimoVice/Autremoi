@@ -18,6 +18,10 @@ function Login() {
           <label htmlFor="">Password</label>
           <input className={inputClass} type="text" />
         </div>
+        <div>
+          <input type="checkbox" />
+          <label htmlFor="">Ricordati di me</label>
+        </div>
         <button className={buttonClass}>
           Accedi
         </button>

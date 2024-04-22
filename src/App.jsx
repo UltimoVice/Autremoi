@@ -6,9 +6,8 @@ import AdminLayout from "./layouts/AdminLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import UserDashboard from "./pages/users/UserDashboard";
 import NewsCatalogue from "./components/shared/NewsCatalogue";
-import ProductALineOfLiberty from "./components/shared/ProductALineOfLiberty";
-import LoginPage from "./pages/LoginPage";
-import CartPage from "./pages/CartPage";
+import Product from "./components/shared/Product";
+import PageStory from "./components/PageStory";
 
 function App() {
   return (
@@ -19,7 +18,8 @@ function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="news" element={<NewsCatalogue />} />
-          <Route path="A-LineofLiberty" element={<ProductALineOfLiberty />} />
+          <Route path="products/:id" element={<Product />} />
+          <Route path="story" element={<PageStory/>}/>
         </Route>
         <Route path="/user" element={<UserLayout />}>
           <Route path="" element={<AdminDashboard />} />

@@ -1,7 +1,9 @@
 import React from "react";
 import { CatalogueProduct } from "./CatalogueProduct";
+import useFetch from "../../hooks/useFetch";
 
 const NewsCatalogue = () => {
+  const {data: products} = useFetch();
   return (
     <div className="">
       <div className="flex items-center justify-center">
@@ -9,12 +11,15 @@ const NewsCatalogue = () => {
       </div>
       <div className="my-0 mx-auto px-5 relative">
         <div className="flex relative mb-10">
-          <CatalogueProduct src={`src/assets/A-Line of Liberty.jpg`}  productName={'A-Line of Liberty'} price={'230 €'} link={'/A-LineofLiberty'}/>
-          <CatalogueProduct src={`src/assets/Minimal Chic.jpg`}  productName={'Minimal Chic'} price={'300 €'}/>
-          <CatalogueProduct src={`src/assets/Androgynous Line.jpg`}  productName={'Androgynous Line'} price={'450 €'}/>
-          <CatalogueProduct src={`src/assets/Graceful.jpg`}  productName={'Graceful'} price={'180 €'}/>
+          {
+            products && products.map(product => (
+              <CatalogueProduct key={product.sku} id={product.id}/>
+            ))
+          }
+          
+          
         </div>
-        <div className="flex relative mb-10">
+        {/* <div className="flex relative mb-10">
           <CatalogueProduct src={`src/assets/Éclat Couture.jpg`}  productName={'Éclat Couture'} price={'200 €'}/>
           <CatalogueProduct src={`src/assets/Élan Eleganza.jpg`}  productName={'Élan Eleganza'} price={'240 €'}/>
           <CatalogueProduct src={`src/assets/Enchanté Couture.jpg`}  productName={'Enchanté Couture'} price={'440 €'}/>
@@ -25,7 +30,7 @@ const NewsCatalogue = () => {
           <CatalogueProduct src={`src/assets/Glamour Gilded.jpg`}  productName={'Glamour Gilded'} price={'530 €'}/>
           <CatalogueProduct src={`src/assets/Grandeur Atelier.jpg`}  productName={'Grandeur Atelier'} price={'300 €'}/>
           <CatalogueProduct src={`src/assets/Grandeur Glitz.jpg`}  productName={'Grandeur Glitz'} price={'260 €'}/>
-        </div>
+        </div> */}
       </div>
     </div>
   );
