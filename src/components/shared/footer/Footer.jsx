@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FooterLinks } from "./FooterLinks";
 
-const footer = {
+const footerData = {
   firstColumn: [
     {
       h3: "About Us",
@@ -46,7 +46,7 @@ const Footer = () => {
         <div className={footer_container}>
           <div className={`${footer_column} justify-end`}>
             <div className="w-1/2">
-              {footer.firstColumn.map((element, i) => (
+              {footerData.firstColumn.map((element, i) => (
                 <FooterLinks key={i} name={element.h3} url={element.url} />
                 // <a href={element.url} key={i}>
                 //   <h3>{element.h3}</h3>
