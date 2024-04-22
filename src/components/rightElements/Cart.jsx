@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
 
 const Cart = (items) => {
+  const products = [
+  {
+    src: "",
+    productName: "",
+    id: "",
+    price: "",
+  },
+  ]
+
   const [noItems, setNoItems] = useState(0)
 
   return (
     <div>
       <h3>SHOPPING BAG</h3>
       <div>
-        {items.map((item, i) => (
+        {products.map((item, i) => (
           <div key={i}>
             <img src={item.src} alt="" />
             <h4>{item.productName}</h4>
