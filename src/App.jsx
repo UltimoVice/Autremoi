@@ -7,6 +7,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import UserDashboard from "./pages/users/UserDashboard";
 import NewsCatalogue from "./components/shared/NewsCatalogue";
 import Product from "./components/shared/Product";
+import PageStory from "./components/PageStory";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="products/:id" element={<Product />} />
-          <Route path="story" />
+          <Route path="story" element={<PageStory/>}/>
         </Route>
         <Route path="/user" element={<UserLayout />}>
           <Route path="" element={<AdminDashboard />} />
