@@ -11,12 +11,12 @@ import PageStory from "./components/PageStory";
 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="cart" element={<CartPage />} />
+          {/* <Route path="login" element={<LoginPage />} /> */}
+          {/* <Route path="cart" element={<CartPage />} /> */}
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="products/:id" element={<Product />} />
           <Route path="story" element={<PageStory/>}/>
@@ -28,7 +28,7 @@ function App() {
           <Route path="" element={<UserDashboard />} />
         </Route>
       </Routes>
-    </>
+    </div>
   );
 }
 

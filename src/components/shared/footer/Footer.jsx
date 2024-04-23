@@ -42,7 +42,7 @@ const newsletter_button = "flex h-[48px] items-center justify-end color-[#000]"
 const Footer = () => {
   return (
     <>
-      <div className="flex max-w-full justify-center">
+      <div className="flex max-w-full justify-center p-20">
         <div className={footer_container}>
           <div className={`${footer_column} justify-end`}>
             <div className="w-1/2">

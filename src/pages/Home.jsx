@@ -4,7 +4,6 @@ import { BannerPub } from "../components/shared/BannerPub";
 import { TwoGender } from "../components/shared/TwoGender";
 import { Story } from "../components/shared/Story";
 
-
 const Home = () => {
   return (
     <>
@@ -12,7 +11,6 @@ const Home = () => {
       <BannerPub />
       <TwoGender />
       <Story />
-
     </>
   );
 };

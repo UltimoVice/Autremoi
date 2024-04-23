@@ -15,9 +15,9 @@ export const TwoGender = () => {
 
   return (
     <Link to="/news">
-      <div className="flex w-full h-[900px] py-6">
+      <div className="flex w-full overflow-hidden py-6">
         <div
-          className="w-1/2 h-full p-2 relative"
+          className="w-1/2 h-full p-2 relative mr-1"
           onMouseOver={handleHoverMale}
           onMouseOut={handleHoverMale}
         >
@@ -37,7 +37,7 @@ export const TwoGender = () => {
         </div>
 
         <div
-          className="w-1/2 h-full p-2 relative"
+          className="w-1/2 h-full p-2 relative ms-1"
           onMouseOver={handleHoverFemale}
           onMouseOut={handleHoverFemale}
         >
@@ -45,9 +45,7 @@ export const TwoGender = () => {
             className={`cursor-pointer absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black ${
               hoverFemale ? "opacity-60" : "opacity-0"
             }`}
-          >
-            {" "}
-          </div>
+          ></div>
           <h2
             className={`text-white font-semibold w-full h-full cursor-pointer flex justify-center items-center absolute text-4xl ${
               hoverFemale ? "opacity-100" : "opacity-0"
