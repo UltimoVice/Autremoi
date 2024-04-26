@@ -3,7 +3,9 @@ import Login from '../components/rightElements/Login'
 
 function LoginPage() {
   return (
+    <>
     <Login/>
+    </>
   )
 }
 

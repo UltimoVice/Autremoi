@@ -3,7 +3,9 @@ import Cart from '../components/rightElements/Cart'
 
 function CartPage() {
   return (
+    <>
     <Cart />
+    </>
   )
 }
 
