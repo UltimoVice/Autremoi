@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { products } from "../../data";
 
 const Product = () => {
   const params = useParams();
 
-  const product = products.find(p => p.id == params.id)
+  // aggiornare prodotto con più proprietà
+  const product = products.find((p) => p.id == params.id);
+  const [updatedProduct, setUpdatedProduct] = useState({})
+  const addProperty = (size) => {setUpdatedProduct({...product, size})}
+
+  // per carrello
+  const [cart, setCart] = useState([]);
+  const addToCart = () => {
+      setCart([...cart, updatedProduct]);
+  };
+
+  // verifica carrello
+  useEffect(() => {
+    console.log(cart);
+  }, [setCart]);
+
+  // salvarlo in locale
+  useEffect(() => {
+    // Salva il carrello nel localStorage quando viene aggiornato
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+  
 
   return (
     <div>
@@ -93,7 +114,8 @@ const Product = () => {
                       name=""
                       id=""
                       className="cursor-pointer"
-                      onClick={"dafare"}
+                      // aggiungere proprietà al prodotto
+                      onChange={(e) => addProperty(e.target.value) }
                     >
                       <option value="S">S</option>
                       <option value="M">M</option>
@@ -106,7 +128,11 @@ const Product = () => {
               </div>
               <div className="">
                 <div className="flex flex-col">
-                  <button className="inline-block overflow-hidden cursor-pointer h-12 max-w-full bg-black border-solid border-[1px] border-black text-white font-normal text-sm px-12 hover:bg-white hover:text-black">
+                  {/* aggiungere a carrello */}
+                  <button
+                    onClick={addToCart}
+                    className="inline-block overflow-hidden cursor-pointer h-12 max-w-full bg-black border-solid border-[1px] border-black text-white font-normal text-sm px-12 hover:bg-white hover:text-black"
+                  >
                     Aggiungi al Carrello
                   </button>
                 </div>
@@ -123,14 +149,16 @@ const Product = () => {
                       </div>
                       <div className=" leading-6 mb-4">
                         <ul className="pl-4 mb-4 list-disc">
-                          {
-                            product.features.map((feature,idx )=> (
-                              <li key={idx} className="mb-2">{feature}</li>
-                            ))
-                          } 
+                          {product.features.map((feature, idx) => (
+                            <li key={idx} className="mb-2">
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
-                      <p className="">Codice: <span>{product.sku}</span></p>
+                      <p className="">
+                        Codice: <span>{product.sku}</span>
+                      </p>
                     </div>
                   </div>
                 </div>
