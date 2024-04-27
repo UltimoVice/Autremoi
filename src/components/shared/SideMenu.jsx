@@ -164,7 +164,7 @@ export const SideMenu = ({ isMenuOpen, setIsMenuOpen }) => {
           <div className="bg-white h-[2000px] relative pt-28 px-5 pb-10 w-80 z-[3]">
             <div className="block absolute top-1">
               <button
-                onMo={toggleSideMenu}
+                onClick={toggleSideMenu}
                 className="cursor-pointer flex items-center h-12 justify-center "
               >
                 <svg
