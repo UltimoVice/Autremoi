@@ -9,8 +9,8 @@ const NewsCatalogue = () => {
       <div className="flex items-center justify-center">
         <h1 className="text-5xl">Novità Uomo e Donna</h1>
       </div>
-      <div className="my-0 mx-auto px-5 relative">
-        <div className="flex relative mb-10">
+      <div className="my-0 mx-auto px-5 relative max-w-full overflow-hidden">
+        <div className="flex flex-wrap relative mb-10 ">
           {
             products && products.map(product => (
               <CatalogueProduct key={product.sku} id={product.id}/>

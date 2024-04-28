@@ -11,7 +11,6 @@ const Home = () => {
       <BannerPub />
       <TwoGender />
       <Story />
-
     </>
   );
 };
