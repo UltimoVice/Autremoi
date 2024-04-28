@@ -18,7 +18,7 @@ function App() {
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="products/:id" element={<Product />} />
           <Route path="story" element={<PageStory/>}/>
-        </Route>
+        </Route>t
         <Route path="/user" element={<UserLayout />}>
           <Route path="" element={<AdminDashboard />} />
         </Route>
