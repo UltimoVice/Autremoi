@@ -1,0 +1,30 @@
+.Cards{
+    display: flex;
+    width: 100px;
+    height:100%
+}
+
+.scroll-Element{
+    margin-right: 10px;
+    animation: scroll 15s linear infinite;
+    opacity: 1;
+    transition: opacity 0.5s ease
+}
+
+.my-Scroll{
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+            overflow-y: hidden;
+            overflow-x: hidden;
+}
+
+@keyframe scroll {
+    from{
+        transform:translateX(0)
+    }
+    to{
+        transform:translateX(calc(-100%-10px))
+    }
+}
