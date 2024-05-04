@@ -39,12 +39,12 @@ export const menu = [
         url: "/admin",
         icon: "./src/assets/svg/clipboard2-check.svg",
       },
-      {
-        id: 4,
-        title: "Post",
-        url: "/admin",
-        icon: "./src/assets/svg/newspaper.svg",
-      },
+      // {
+      //   id: 4,
+      //   title: "Post",
+      //   url: "/admin",
+      //   icon: "./src/assets/svg/newspaper.svg",
+      // },
     ],
   },
   {
@@ -57,24 +57,24 @@ export const menu = [
         url: "/admin",
         icon: "./src/assets/svg/grid.svg",
       },
-      {
-        id: 2,
-        title: "Notes",
-        url: "/admin",
-        icon: "./src/assets/svg/pencil-square.svg",
-      },
-      {
-        id: 3,
-        title: "Forms",
-        url: "/admin",
-        icon: "./src/assets/svg/list-columns-reverse.svg",
-      },
-      {
-        id: 4,
-        title: "Calendar",
-        url: "/admin",
-        icon: "./src/assets/svg/calendar3.svg",
-      },
+      // {
+      //   id: 2,
+      //   title: "Notes",
+      //   url: "/admin",
+      //   icon: "./src/assets/svg/pencil-square.svg",
+      // },
+      // {
+      //   id: 3,
+      //   title: "Forms",
+      //   url: "/admin",
+      //   icon: "./src/assets/svg/list-columns-reverse.svg",
+      // },
+      // {
+      //   id: 4,
+      //   title: "Calendar",
+      //   url: "/admin",
+      //   icon: "./src/assets/svg/calendar3.svg",
+      // },
     ],
   },
   {
@@ -87,32 +87,32 @@ export const menu = [
         url: "/admin",
         icon: "./src/assets/svg/gear.svg",
       },
-      {
-        id: 2,
-        title: "Backups",
-        url: "/admin",
-        icon: "./src/assets/svg/hdd.svg",
-      },
+      // {
+      //   id: 2,
+      //   title: "Backups",
+      //   url: "/admin",
+      //   icon: "./src/assets/svg/hdd.svg",
+      // },
     ],
   },
-  {
-    id: 5,
-    title: "analytics",
-    listItems: [
-      {
-        id: 1,
-        title: "Charts",
-        url: "/admin",
-        icon: "./src/assets/svg/bar-chart-line.svg",
-      },
-      {
-        id: 2,
-        title: "Logs",
-        url: "/admin",
-        icon: "./src/assets/svg/book.svg",
-      },
-    ],
-  },
+  // {
+  //   id: 5,
+  //   title: "analytics",
+  //   listItems: [
+  //     {
+  //       id: 1,
+  //       title: "Charts",
+  //       url: "/admin",
+  //       icon: "./src/assets/svg/bar-chart-line.svg",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Logs",
+  //       url: "/admin",
+  //       icon: "./src/assets/svg/book.svg",
+  //     },
+  //   ],
+  // },
 ];
 
 export const topDealUsers = [

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const LiSubMenu = ({ elements, isSubMenuOpen }) => {
   const [showUnderlines, setShowUnderlines] = useState(
@@ -31,11 +32,11 @@ export const LiSubMenu = ({ elements, isSubMenuOpen }) => {
         {elements.map((e, index) => (
           <li
             key={index}
-            className={`mb-5 cursor-pointer`}
+            className="mb-5 cursor-pointer"
             onMouseOver={() => handleOverUnderline(index)}
             onMouseOut={() => handleOutUnderline(index)}
           >
-            <a href="">{e}</a>
+            <Link to="/news">{e}</Link>
             <img
               src="https://www.viviennewestwood.com/it-it/on/demandware.static/Sites-viviennewestwood-eu-Site/-/it_IT/v1711512064679/images/underline.svg"
               alt=""
