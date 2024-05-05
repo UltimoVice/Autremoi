@@ -76,7 +76,7 @@ export const CartProduct = ({ id, add, remove, del }) => {
             </button>
           </div>
           <div className="w-1/5 text-end">{product.price / 100} €</div>
-          <button onClick={del}>
+          <button onClick={() => del(product.id)}>
             <svg
               width="24"
               height="24"
