@@ -8,6 +8,7 @@ import UserDashboard from "./pages/users/UserDashboard";
 import NewsCatalogue from "./components/shared/NewsCatalogue";
 import Product from "./components/shared/Product";
 import PageStory from "./components/PageStory";
+import Products from "./pages/admin/Products";
 
 function App() {
   return (
@@ -20,12 +21,12 @@ function App() {
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="products/:id" element={<Product />} />
           <Route path="story" element={<PageStory/>}/>
-        </Route>
+        </Route>t
         <Route path="/user" element={<UserLayout />}>
           <Route path="" element={<UserDashboard />} />
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
-          <Route path="" element={<HomeDashboard />} />
+          <Route path="" element={<Products />} />
         </Route>
       </Routes>
     </div>
