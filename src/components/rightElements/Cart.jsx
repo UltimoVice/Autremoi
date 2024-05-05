@@ -1,18 +1,21 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../../data";
+import { CartProduct } from "./CartProduct";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
-  // useEffect(setCart([...products]),[])
 
-  // useEffect(() => {
-  //   // Carica il carrello dal localStorage quando il componente viene montato
-  //   const storedCart = localStorage.getItem("cart");
-  //   if (storedCart) {
-  //     setCart(JSON.parse(storedCart));
-  //   }
-  // }, []);
+  const [subTotal, setSubTotal] = useState(0);
+  useEffect(() => {
+    setSubTotal(cart && cart.reduce((a, item) => (a + item.price/100, 0)))
+  }, [products])
+
+  useEffect(() => {
+    // Carica il carrello dal localStorage quando il componente viene montato
+    const storedCart = localStorage.getItem("cart");
+    storedCart && setCart(JSON.parse(storedCart));
+  } ,[cart]);
 
   // const removeFromCart = (index) => {
   //   const updatedCart = [...cart];
@@ -21,41 +24,26 @@ const Cart = () => {
   //   localStorage.setItem("cart", JSON.stringify(updatedCart));
   // };
 
-  // classi
-  const carrello = ""
-  const img_container = "h-[264px] w-[228px]";
-  const img = "h-full";
 
   return (
-    <div className="">
-      <div className={carrello}>
-        <h3>SHOPPING BAG</h3>
-        <div>
-          {products.length === 0
-            ? "Nessun prodotto nel carrello"
-            : products.map((item, i) => (
-                <div key={i}>
-                  <div className={img_container}>
-                    <img className={img} src="../../assets/A-Line of Liberty.jpg" alt="" />
-                  </div>
-                  <h4>{item.productName}</h4>
-                  <div>
-                    <button onClick={() => removeFromCart(index)}>
-                      Remove
-                    </button>
-                  </div>
-                  <p>{`price: ${item.price}`}</p>
-                </div>
-              ))}
+    <div className="w-full flex justify-center items-center">
+      <div className="">
+        <h3 className="text-4xl mb-3">Carrello</h3>
+        <div className="">
+          {cart &&
+            cart.map((product) => (
+              <CartProduct key={product.sku} id={product.id} />
+            ))
+          }
           <div>
             <div>
               <div>
+                <hr />
+                <div>Riepilogo dell'ordine</div>
                 <div>Subtotal</div>
                 <div>
                   {" "}
-                  {products.length === 0
-                    ? ""
-                    : products.reduce((item, a) => (item.price + a, 0))}
+                  {subTotal}
                 </div>
               </div>
             </div>

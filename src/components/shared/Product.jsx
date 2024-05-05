@@ -13,13 +13,13 @@ const Product = () => {
   // per carrello
   const [cart, setCart] = useState([]);
   const addToCart = () => {
-      setCart([...cart, updatedProduct]);
+      setCart([...cart, product]);
   };
 
   // verifica carrello
   useEffect(() => {
     console.log(cart);
-  }, [setCart]);
+  }, [cart]);
 
   // salvarlo in locale
   useEffect(() => {
