@@ -362,13 +362,14 @@ const rows = [
 
 const Products = () => {
   const [open, setOpen] = useState(false)
+  const [products, setProducts] = useState(rows)
   return (
     <div className="">
       <div className="flex items-center p-2">
         <h1 className="font-bold text-2xl p-2 mb-3">Products</h1>
         <button onClick={() => setOpen(true)} className="bg-white text-slate-900 p-1 font-medium mb-3">Add new product</button>
       </div>
-      <DataTable slug="products" columns={columns} rows={rows}/>
+      <DataTable slug="products" columns={columns} rows={rows} setProducts={setProducts} products={products}/>
       {open && <Add slug="product" columns={columns} setOpen={setOpen} />}
     </div>
   );

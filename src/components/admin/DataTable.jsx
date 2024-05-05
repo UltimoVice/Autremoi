@@ -1,11 +1,16 @@
 import { Link } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import React from "react";
+import React, { useState } from "react";
+
 
 const DataTable = (props) => {
+ 
+  
   const handleDelete = (id, e) => {
     //delete item
     console.log(id + "has been deleted!");
+props.setProducts((products) => products.filter((deleted) => deleted.id !== id))
+    console.log(props.products);
    if (e) e.stopPropagation();
   };
  
