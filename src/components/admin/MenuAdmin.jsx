@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { menu } from "/Autremoi/src/data/dataAdminDashboard.js";
+import { menu } from "../../data/dataAdminDashboard";
 
 const MenuAdmin = () => {
   return (
