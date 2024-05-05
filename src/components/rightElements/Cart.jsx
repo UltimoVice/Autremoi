@@ -7,6 +7,7 @@ const Cart = () => {
   const [cart, setCart] = useState([]);
 
   const [subTotal, setSubTotal] = useState(0);
+
   useEffect(() => {
     setSubTotal(cart && cart.reduce((a, item) => (a + item.price/100, 0)))
   }, [products])
@@ -17,12 +18,13 @@ const Cart = () => {
     storedCart && setCart(JSON.parse(storedCart));
   } ,[cart]);
 
-  // const removeFromCart = (index) => {
-  //   const updatedCart = [...cart];
-  //   updatedCart.splice(index, 1);
-  //   setCart(updatedCart);
-  //   localStorage.setItem("cart", JSON.stringify(updatedCart));
-  // };
+
+  const removeFromCart = (index) => {
+    const updatedCart = [...cart];
+    updatedCart.splice(index, 1);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
 
   return (
