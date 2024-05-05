@@ -93,7 +93,7 @@ export const SearchMenu = ({ isSearchOpen, setIsSearchOpen }) => {
                     <Link className='hover:underline' to="/news">Novità</Link>
                   </LiSideMenu>
                   <LiSideMenu>
-                    <Link className='hover:underline' to="/">Donna</Link>
+                    <Link className='hover:underline' to="/news">Donna</Link>
                   </LiSideMenu>
                   <LiSideMenu>
                     <Link className='hover:underline' to="/">Informazioni sulle spedizioni</Link>

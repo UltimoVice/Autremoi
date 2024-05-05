@@ -19,16 +19,15 @@ const footerData = {
   ],
 };
 
-
-
 // classi
 
 const footer_container = "flex max-w-6xl w-1/2 justify-between";
 const footer_column = "flex w-1/2";
-const footer_row = "mb-4 "
+const footer_row = "mb-4 ";
 
-const newsletter_input =   "background-color-[#fff] border-b-2 border-black w-full"
-const newsletter_button = "flex h-[48px] items-center justify-end color-[#000]" 
+const newsletter_input =
+  "background-color-[#fff] border-b-2 border-black w-full";
+const newsletter_button = "flex h-[48px] items-center justify-end color-[#000]";
 
 // const [showUnderline, setShowUnderline] = useState(false);
 
@@ -42,6 +41,9 @@ const newsletter_button = "flex h-[48px] items-center justify-end color-[#000]"
 const Footer = () => {
   return (
     <>
+      <div className="flex justify-center pt-40">
+        <div className="w-[75%] flex justify-center border-[1px] border-solid border-black" />
+      </div>
       <div className="flex max-w-full justify-center p-20">
         <div className={footer_container}>
           <div className={`${footer_column} justify-end`}>
@@ -185,7 +187,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className="mb-5"/>
+        <hr className="mb-5" />
       </div>
     </>
   );

@@ -186,7 +186,7 @@ export const SideMenu = ({ isMenuOpen, setIsMenuOpen }) => {
               <div className=" flex flex-col h-full">
                 <ul className="flex flex-col flex-grow">
                   <LiSideMenu>
-                    <Link to='/'>Home</Link>
+                    <Link to='/' className="hover:underline">Home</Link>
                   </LiSideMenu>
                   <LiSideMenu
                     name={"Novità"}
