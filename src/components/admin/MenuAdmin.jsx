@@ -12,7 +12,7 @@ const MenuAdmin = () => {
           </span>
           {item.listItems.map((listItem) => (
             <Link
-            to={"/admin"}
+            to={listItem.url}
             className="listItem flex items-center gap-3 p-3 hover:bg-slate-800" key={listItem.id}
           >
             <img src={listItem.icon} alt="" />

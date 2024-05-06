@@ -45,7 +45,7 @@ props.setProducts((products) => products.filter((deleted) => deleted.id !== id))
     <div className="bg-white w-full max-w-full" >
       <DataGrid
         className="p-5 flex items-center text-center justify-center"
-        rows={props.rows}
+        rows={props.products}
         columns={[...props.columns, actionColumns]}
         initialState={{
           pagination: {
