@@ -41,7 +41,7 @@ const Cart = () => {
           {!cart && "Nessun prodotto nel carrello"}
           {cart &&
             cart.map((product, i) => (
-              <CartProduct key={product.sku} id={product.id}  add={addItem()} del={() => deleteFromCart(i)}/> //
+              <CartProduct key={product.sku} id={product.id}  del={() => deleteFromCart(i)}/> //
             ))
           }
           <div>
