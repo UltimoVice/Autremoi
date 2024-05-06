@@ -1,10 +1,12 @@
-import React from 'react'
-import Cart from '../components/rightElements/Cart'
+import React from "react";
+import Cart from "../components/rightElements/Cart";
 
 function CartPage() {
   return (
-    <Cart />
-  )
+    <>
+      <Cart />
+    </>
+  );
 }
 
-export default CartPage
+export default CartPage;

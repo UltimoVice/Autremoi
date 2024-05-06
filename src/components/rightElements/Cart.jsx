@@ -1,49 +1,59 @@
-import {React,  useState } from 'react'
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { products } from "../../data";
+import { CartProduct } from "./CartProduct";
+
+const Cart = () => {
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    // Carica il carrello dal localStorage quando il componente viene montato
+    const storedCart = JSON.parse(localStorage.getItem("cart"));
+    storedCart && setCart([...storedCart]);
+  } ,[cart]);
 
 
-const Cart = (items) => {
-  const products = [
-  {
-    src: "",
-    productName: "",
-    id: "",
-    price: "",
-  },
-  ]
+  const [subTotal, setSubTotal] = useState(0);
 
-  const [noItems, setNoItems] = useState(0)
+  // useEffect(() => {
+  //   setSubTotal(cart && cart.reduce((a, item) => (a + item.price/100, 0)))
+  // }, [cart])
+
+ 
+
+  const removeFromCart = (e) => {
+    setCart(cart.filter((_, i) => i !== e));
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
 
   return (
-    <div>
-      <h3>SHOPPING BAG</h3>
-      <div>
-        {products.map((item, i) => (
-          <div key={i}>
-            <img className="w-5 h-5" src={item.src} alt="" />
-            <h4>{item.productName}</h4>
-
-            <Link to={item.id}>{`Go to the product`}</Link>
-            <div>
-              <button onClick={setNoItems(noItems + 1)}>+</button>
-              <div>{noItems}</div>
-              <button onClick={setNoItems(noItems - 1)}>-</button>
-            </div>
-            <p>{`price: ${item.price}`}</p>
-          </div>
-        ))}
-        <div>
+    <div className="w-full flex justify-center items-center">
+      <div className="">
+        <h3 className="text-4xl mb-3">Carrello</h3>
+        <div className="">
+          {cart &&
+            cart.map((product, i) => (
+              <CartProduct key={product.sku} id={product.id}  /> //del={removeFromCart(i)}
+            ))
+          }
           <div>
             <div>
-              <div>Subtotal</div>
-              <div>{products.reduce((item, a) => (item.price + a, 0))}
+              <div>
+                <hr />
+                <div>Riepilogo dell'ordine</div>
+                <div>Subtotal</div>
+                <div>
+                  {" "}
+                  {subTotal}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

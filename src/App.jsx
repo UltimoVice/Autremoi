@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
 import Home from "./pages/Home";
+import LoginPage from "./pages/LoginPage";
+import CartPage from "./pages/CartPage";
 import UserLayout from "./layouts/UserLayout";
 import AdminLayout from "./layouts/AdminLayout";
 import HomeDashboard from "./pages/admin/HomeDashboard";
@@ -16,8 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
-          {/* <Route path="login" element={<LoginPage />} /> */}
-          {/* <Route path="cart" element={<CartPage />} /> */}
+          <Route path="login" element={<LoginPage />} />
+          <Route path="cart" element={<CartPage />} />
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="products/:id" element={<Product />} />
           <Route path="story" element={<PageStory/>}/>
