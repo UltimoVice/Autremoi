@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../../data";
 
-export const CartProduct = ({ id, add, remove, del }) => {
+export const CartProduct = ({ id, add, no, remove, del }) => {
   const [opacity, setOpacity] = useState(false);
 
   const product = products.find((p) => p.id === id);
@@ -47,7 +47,6 @@ export const CartProduct = ({ id, add, remove, del }) => {
                   d="M2 12.8494H22"
                   stroke="currentColor"
                   stroke-width="1.5"
-                  stroke-miterlimit="10"
                   stroke-linecap="round"
                 ></path>
               </svg>

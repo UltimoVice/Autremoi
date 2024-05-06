@@ -1,13 +1,11 @@
-import React from "react";
-import Cart from "../components/shared/Cart";
+import React from 'react'
+import Cart from '../components/shared/Cart'
 
 
-function CartPage() {
+const CartPage1 = () => {
   return (
-    <>
-      <Cart />
-    </>
-  );
+    <div><Cart/></div>
+  )
 }
 
-export default CartPage;
+export default CartPage1

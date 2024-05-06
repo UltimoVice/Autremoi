@@ -11,7 +11,19 @@ const Cart = () => {
     storedCart && setCart([...storedCart]);
   } ,[]);
 
+  const [noItems, setNoItems] = useState(1)
 
+
+  const deleteFromCart = (e) => {
+    setCart(cart.filter((_, i) => i !== e));
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
+  useEffect(() => {
+    // Salva il carrello nel localStorage quando viene aggiornato
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+  
   const [subTotal, setSubTotal] = useState(0);
 
   // useEffect(() => {
@@ -20,20 +32,16 @@ const Cart = () => {
 
  
 
-  const removeFromCart = (e) => {
-    setCart(cart.filter((_, i) => i !== e));
-    localStorage.setItem("cart", JSON.stringify(cart));
-  };
-
 
   return (
     <div className="w-full flex justify-center items-center">
       <div className="">
         <h3 className="text-4xl mb-3">Carrello</h3>
         <div className="">
+          {!cart && "Nessun prodotto nel carrello"}
           {cart &&
             cart.map((product, i) => (
-              <CartProduct key={product.sku} id={product.id}  del={() => removeFromCart(i)}/> //
+              <CartProduct key={product.sku} id={product.id}  add={addItem()} del={() => deleteFromCart(i)}/> //
             ))
           }
           <div>

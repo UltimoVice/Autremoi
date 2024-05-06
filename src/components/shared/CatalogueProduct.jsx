@@ -18,7 +18,7 @@ export const CatalogueProduct = ({ id }) => {
           <div className="h-[528px] overflow-hidden relative w-[457px] cursor-pointer bg-black" onMouseOver={toggleOpacity} onMouseOut={toggleOpacity} >
             <img
               className="w-full h-full border-none block left-0 object-cover absolute top-0 hover:scale-125 transition-transform duration-300"
-              src={`/src/assets/${product.images}`}
+              src={`/${product.images}`}
               alt={product.title}
             />
             <button className={`bg-[rgba(0,0,0,0.6)] h-10 border-none bottom-0 text-white font-medium left-0 ${opacity ? 'opacity-100' : 'opacity-0'}  w-full absolute text-sm px-12`}>

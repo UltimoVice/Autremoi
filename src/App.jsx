@@ -11,8 +11,8 @@ import NewsCatalogue from "./components/shared/NewsCatalogue";
 import Product from "./components/shared/Product";
 import PageStory from "./components/PageStory";
 import Products from "./pages/admin/Products";
-import TermP from "./components/shared/footer/footerElements/TermP";
-import PrivacyP from "./components/shared/footer/footerElements/PrivacyP";
+import TermP from "./components/shared/footerElements/TermP";
+import PrivacyP from "./components/shared/footerElements/PrivacyP";
 
 function App() {
   return (
