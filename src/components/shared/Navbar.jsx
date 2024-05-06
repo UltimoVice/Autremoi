@@ -2,8 +2,9 @@ import { useState } from "react";
 import { SideMenu } from "./SideMenu";
 import { SearchMenu } from "./SearchMenu";
 import { Link } from "react-router-dom";
-import { RightBar } from "../rightElements/RightBar";
-import Cart from "../rightElements/Cart";
+import { RightBar } from "./RightBar";
+import Cart from "./Cart";
+import { useEffect } from "react";
 
 
 export const Navbar = () => {
@@ -23,6 +24,24 @@ export const Navbar = () => {
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
+
+
+  // per carrello
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    // Carica il carrello dal localStorage quando il componente viene montato
+    const storedCart = JSON.parse(localStorage.getItem("cart"));
+    storedCart && setCart([...storedCart]);
+  } ,[]);
+
+  const [items, setItems] = useState(0)
+  useEffect(() => {
+    setItems(cart.length)
+  }, []) 
+  
+
+
 
   return (
     <div>
@@ -125,7 +144,7 @@ export const Navbar = () => {
                 id="cart"
                 href=""
                 onClick={() => toggleCart("cart")}
-                className="flex cursor-pointer items-center justify-center"
+                className="flex cursor-pointer items-center justify-center relative"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -137,6 +156,7 @@ export const Navbar = () => {
                 >
                   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
                 </svg>
+                {cart && cart.length !== 0 && <span class="bg-red-500 text-white w-4 h-4 rounded-full absolute top-[-10px] right-[-10px] flex items-center justify-center text-xs">{items}</span>}
               </Link>
             </div>
           </div>

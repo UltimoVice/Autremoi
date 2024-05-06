@@ -10,11 +10,11 @@ const footerData = {
     },
     {
       h3: "Privacy Policy",
-      url: "",
+      url: "/privacy",
     },
     {
       h3: "Terms of Service",
-      url: "",
+      url: "/terms",
     },
   ],
 };

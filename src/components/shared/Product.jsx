@@ -12,14 +12,16 @@ const Product = () => {
 
   // per carrello
   const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    // Carica il carrello dal localStorage quando il componente viene montato
+    const storedCart = JSON.parse(localStorage.getItem("cart"));
+    storedCart && setCart([...storedCart]);
+  } ,[]);
+
   const addToCart = () => {
       setCart([...cart, product]);
   };
-
-  // verifica carrello
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   // salvarlo in locale
   useEffect(() => {
@@ -70,7 +72,7 @@ const Product = () => {
               <div className="relative">
                 <div className="flex overflow-hidden w-full">
                   <img
-                    src={`/src/assets/${product.images[0]}`}
+                    src={`/${product.images}`}
                     className="cursor-zoom-in"
                   />
                 </div>

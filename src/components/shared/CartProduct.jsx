@@ -24,7 +24,7 @@ export const CartProduct = ({ id, add, remove, del }) => {
           >
             <img
               className="w-full h-full border-none block left-0 object-cover absolute top-0 hover:scale-125 transition-transform duration-300"
-              src={`/src/assets/${product.images[0]}`}
+              src={`/${product.images}`}
               alt={product.title}
             />
           </div>

@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { products } from "../../data";
 import { CartProduct } from "./CartProduct";
 
 const Cart = () => {
@@ -10,7 +9,7 @@ const Cart = () => {
     // Carica il carrello dal localStorage quando il componente viene montato
     const storedCart = JSON.parse(localStorage.getItem("cart"));
     storedCart && setCart([...storedCart]);
-  } ,[cart]);
+  } ,[]);
 
 
   const [subTotal, setSubTotal] = useState(0);
@@ -34,7 +33,7 @@ const Cart = () => {
         <div className="">
           {cart &&
             cart.map((product, i) => (
-              <CartProduct key={product.sku} id={product.id}  /> //del={removeFromCart(i)}
+              <CartProduct key={product.sku} id={product.id}  del={() => removeFromCart(i)}/> //
             ))
           }
           <div>
@@ -47,6 +46,7 @@ const Cart = () => {
                   {" "}
                   {subTotal}
                 </div>
+                <Link to={`/news`}>Ritorna allo shopping</Link>
               </div>
             </div>
           </div>

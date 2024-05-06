@@ -11,6 +11,8 @@ import NewsCatalogue from "./components/shared/NewsCatalogue";
 import Product from "./components/shared/Product";
 import PageStory from "./components/PageStory";
 import Products from "./pages/admin/Products";
+import TermP from "./components/shared/footer/footerElements/TermP";
+import PrivacyP from "./components/shared/footer/footerElements/PrivacyP";
 
 function App() {
   return (
@@ -23,13 +25,16 @@ function App() {
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="products/:id" element={<Product />} />
           <Route path="story" element={<PageStory/>}/>
+          <Route path="terms" element={<TermP/>}/>
+          <Route path="privacy" element={<PrivacyP/>}/>
+
         </Route>t
         <Route path="/user" element={<UserLayout />}>
           <Route path="" element={<UserDashboard />} />
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
-          <Route path="" element={<HomeDashboard />} />
-          <Route path="products" element={<Products />} />
+          <Route path="dash" element={<HomeDashboard />} />
+          <Route path="" element={<Products />} />
         </Route>
       </Routes>
     </div>
