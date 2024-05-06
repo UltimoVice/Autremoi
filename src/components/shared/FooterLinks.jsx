@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const FooterLinks = ({ name, url, elementKey, children }) => {
   const [showUnderline, setShowUnderline] = useState(false);
@@ -23,8 +24,8 @@ export const FooterLinks = ({ name, url, elementKey, children }) => {
       {children ? (
         children
       ) : (
-        <a
-          href={url}
+        <Link
+          to={url}
           className={`inline-block relative decoration-transparent font-normal text-sm leading-6 text-center`}
           onMouseOver={handleOverUnderline}
           onMouseOut={handleOutUnderline}
@@ -44,7 +45,7 @@ export const FooterLinks = ({ name, url, elementKey, children }) => {
               }`}
             />
           </span>
-        </a>
+        </Link>
       )}
     </div>
   );
