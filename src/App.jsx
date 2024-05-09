@@ -29,12 +29,11 @@ function App() {
           <Route path="privacy" element={<PrivacyP/>}/>
 
         </Route>t
-        <Route path="/user" element={<UserLayout />}>
-          <Route path="" element={<UserDashboard />} />
+        <Route path="/prods" element={<AdminLayout />}>
+          <Route path="" element={<Products />} />
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
-          <Route path="dash" element={<HomeDashboard />} />
-          <Route path="" element={<Products />} />
+          <Route path="" element={<HomeDashboard />} />
         </Route>
       </Routes>
     </div>

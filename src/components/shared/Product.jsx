@@ -7,8 +7,10 @@ const Product = () => {
 
   // aggiornare prodotto con più proprietà
   const product = products.find((p) => p.id == params.id);
-  const [updatedProduct, setUpdatedProduct] = useState({})
-  const addProperty = (size) => {setUpdatedProduct({...product, size})}
+  const [updatedProduct, setUpdatedProduct] = useState({});
+  const addProperty = (size) => {
+    setUpdatedProduct({ ...product, size });
+  };
 
   // per carrello
   const [cart, setCart] = useState([]);
@@ -17,18 +19,17 @@ const Product = () => {
     // Carica il carrello dal localStorage quando il componente viene montato
     const storedCart = JSON.parse(localStorage.getItem("cart"));
     storedCart && setCart([...storedCart]);
-  } ,[]);
+  }, []);
 
   const addToCart = () => {
-      setCart([...cart, product]);
+    setCart([...cart, product]);
   };
 
   // salvarlo in locale
   useEffect(() => {
     // Salva il carrello nel localStorage quando viene aggiornato
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  
 
   return (
     <div>
@@ -71,10 +72,7 @@ const Product = () => {
             <div className=" max-w-2xl w-3/5">
               <div className="relative">
                 <div className="flex overflow-hidden w-full">
-                  <img
-                    src={`/${product.images}`}
-                    className="cursor-zoom-in"
-                  />
+                  <img src={`/${product.images}`} className="cursor-zoom-in" />
                 </div>
               </div>
             </div>
@@ -117,7 +115,7 @@ const Product = () => {
                       id=""
                       className="cursor-pointer"
                       // aggiungere proprietà al prodotto
-                      onChange={(e) => addProperty(e.target.value) }
+                      onChange={(e) => addProperty(e.target.value)}
                     >
                       <option value="S">S</option>
                       <option value="M">M</option>

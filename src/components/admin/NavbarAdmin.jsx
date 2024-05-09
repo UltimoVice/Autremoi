@@ -1,12 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavbarAdmin = () => {
   return (
     <div className='navbar w-full p-5 flex items-center justify-between'>
+      <Link to="/">
         <div className='logo flex items-center font-bold gap-3'>
             <img src="./src/assets/logoSpessoBianco.png" alt="Logo Autremoi Bianco" className='w-10 h-15'/>
             <span>Autremoi</span>
         </div>
+      </Link>
         <div className='icons flex items-center gap-5'>
             <img src=".\src\assets\svg\search.svg" alt="search" className='cursor-pointer'/>
             {/* <img src=".\src\assets\svg\grid.svg" alt="grid" />
