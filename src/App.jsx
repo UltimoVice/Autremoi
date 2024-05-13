@@ -13,15 +13,20 @@ import PageStory from "./components/PageStory";
 import Products from "./pages/admin/Products";
 import TermP from "./components/shared/footerElements/TermP";
 import PrivacyP from "./components/shared/footerElements/PrivacyP";
+import { useSelector } from "react-redux";
+import { selectUser } from "./components/features/userSlice";
+import Logout from "./components/shared/Logout";
 import WishListPage from "./pages/WishListPage";
 
 function App() {
+  const user = useSelector(selectUser)
+
   return (
     <div className="overflow-x-hidden">
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
-          <Route path="login" element={<LoginPage />} />
+          <Route path="login" element={user ? <Logout/> : <LoginPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="wishlist" element={<WishListPage />} />
           <Route path="news" element={<NewsCatalogue />} />
