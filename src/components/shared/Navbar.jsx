@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SideMenu } from "./SideMenu";
 import { SearchMenu } from "./SearchMenu";
 import { Link } from "react-router-dom";
 import { RightBar } from "./RightBar";
-import Cart from "./Cart";
-import { useEffect } from "react";
 
 
 export const Navbar = () => {
@@ -26,20 +24,23 @@ export const Navbar = () => {
   };
 
 
-  // per carrello
+  // per carrello e wishlist
   const [cart, setCart] = useState([]);
+  const [wishList, setWishList] = useState([]);
 
   useEffect(() => {
     // Carica il carrello dal localStorage quando il componente viene montato
     const storedCart = JSON.parse(localStorage.getItem("cart"));
     storedCart && setCart([...storedCart]);
+    const storedWish = JSON.parse(localStorage.getItem("wishList"));
+    storedWish && setWishList([...storedWish]);
   } ,[]);
 
   const [items, setItems] = useState(0)
   useEffect(() => {
     setItems(cart.length)
-  }, []) 
-  
+  }, [cart])
+
 
 
 
@@ -123,7 +124,8 @@ export const Navbar = () => {
             {/* wishlist */}
             <div className="p-2">
               <Link
-                className="flex cursor-pointer items-center justify-center"
+                to="/wishlist"
+                className="flex cursor-pointer items-center justify-center relative"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -135,6 +137,7 @@ export const Navbar = () => {
                 >
                   <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
                 </svg>
+                {wishList.length >= 1 && <span className="bg-red-500 text-white w-4 h-4 rounded-full absolute top-[-10px] right-[-10px] flex items-center justify-center text-xs">{wishList.length}</span>}
               </Link>
             </div>
             {/* cart */}
@@ -156,7 +159,7 @@ export const Navbar = () => {
                 >
                   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
                 </svg>
-                {cart && cart.length !== 0 && <span class="bg-red-500 text-white w-4 h-4 rounded-full absolute top-[-10px] right-[-10px] flex items-center justify-center text-xs">{items}</span>}
+                {cart.length >= 1 && <span className="bg-red-500 text-white w-4 h-4 rounded-full absolute top-[-10px] right-[-10px] flex items-center justify-center text-xs">{items}</span>}
               </Link>
             </div>
           </div>

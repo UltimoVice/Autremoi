@@ -9,10 +9,9 @@ const Cart = () => {
     // Carica il carrello dal localStorage quando il componente viene montato
     const storedCart = JSON.parse(localStorage.getItem("cart"));
     storedCart && setCart([...storedCart]);
-  } ,[]);
+  }, []);
 
-  const [noItems, setNoItems] = useState(1)
-
+  const [noItems, setNoItems] = useState(1);
 
   const deleteFromCart = (e) => {
     setCart(cart.filter((_, i) => i !== e));
@@ -21,44 +20,51 @@ const Cart = () => {
 
   useEffect(() => {
     // Salva il carrello nel localStorage quando viene aggiornato
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  
+
   const [subTotal, setSubTotal] = useState(0);
 
   // useEffect(() => {
   //   setSubTotal(cart && cart.reduce((a, item) => (a + item.price/100, 0)))
   // }, [cart])
 
- 
-
-
   return (
     <div className="w-full flex justify-center items-center">
       <div className="">
-        <h3 className="text-4xl mb-3">Carrello</h3>
-        <div className="">
-          {!cart && "Nessun prodotto nel carrello"}
-          {cart &&
-            cart.map((product, i) => (
-              <CartProduct key={product.sku} id={product.id}  del={() => deleteFromCart(i)}/> //
-            ))
-          }
-          <div>
-            <div>
-              <div>
-                <hr />
-                <div>Riepilogo dell'ordine</div>
-                <div>Subtotal</div>
-                <div>
-                  {" "}
-                  {subTotal}
-                </div>
-                <Link to={`/news`}>Ritorna allo shopping</Link>
-              </div>
-            </div>
-          </div>
+        {cart.length < 1 && 
+        <div className="flex justify-center flex-col items-center">
+          <h3 className="text-4xl mb-3">IL TUO CARRELLO È VUOTO</h3>
+          <Link to={`/news`}>
+            <button className="bg-black text-white h-[48px] px-5">Ritorna allo shopping</button>
+          </Link>
         </div>
+        }
+        {cart.length >= 1 && (
+          <div>
+            <h3 className="text-4xl mb-3">Carrello</h3>
+            <div className="mb-3">
+              {cart.map((product, i) => (
+                <CartProduct
+                  key={product.sku}
+                  id={product.id}
+                  del={() => deleteFromCart(i)}
+                /> //
+              ))}
+              <div>
+                <div>
+                  <div>
+                    <hr />
+                    <div>Riepilogo dell'ordine</div>
+                    <div>Subtotal</div>
+                    <div> {subTotal}</div>
+                    <Link to={`/news`}>Ritorna allo shopping</Link>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        )}
       </div>
     </div>
   );

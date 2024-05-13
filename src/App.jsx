@@ -13,6 +13,7 @@ import PageStory from "./components/PageStory";
 import Products from "./pages/admin/Products";
 import TermP from "./components/shared/footerElements/TermP";
 import PrivacyP from "./components/shared/footerElements/PrivacyP";
+import WishListPage from "./pages/WishListPage";
 
 function App() {
   return (
@@ -22,13 +23,13 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="cart" element={<CartPage />} />
+          <Route path="wishlist" element={<WishListPage />} />
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="products/:id" element={<Product />} />
           <Route path="story" element={<PageStory/>}/>
           <Route path="terms" element={<TermP/>}/>
           <Route path="privacy" element={<PrivacyP/>}/>
-
-        </Route>t
+        </Route>
         <Route path="/prods" element={<AdminLayout />}>
           <Route path="" element={<Products />} />
         </Route>

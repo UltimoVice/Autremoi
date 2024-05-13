@@ -15,7 +15,7 @@ const Product = () => {
   // per carrello
   const [cart, setCart] = useState([]);
 
-  useEffect(() => {
+  localStorage.getItem('cart') && useEffect(() => {
     // Carica il carrello dal localStorage quando il componente viene montato
     const storedCart = JSON.parse(localStorage.getItem("cart"));
     storedCart && setCart([...storedCart]);
@@ -30,6 +30,25 @@ const Product = () => {
     // Salva il carrello nel localStorage quando viene aggiornato
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  // per carrello
+  const [wishList, setWishList] = useState([]);
+
+  useEffect(() => {
+    // Carica il carrello dal localStorage quando il componente viene montato
+    const storedWishlist= JSON.parse(localStorage.getItem("wishList"));
+    storedWishlist && setWishList([...storedWishlist]);
+  }, []);
+
+  const addToWishList = () => {
+    setWishList([...wishList, product]);
+  };
+
+  // salvarlo in locale
+  useEffect(() => {
+    // Salva il carrello nel localStorage quando viene aggiornato
+    localStorage.setItem("wishList", JSON.stringify(wishList));
+  }, [wishList]);
 
   return (
     <div>
@@ -81,16 +100,19 @@ const Product = () => {
                 <h2 className=" text-3xl leading-5 font-normal mb-4 pr-10">
                   {product.title}
                 </h2>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                  className="bi bi-heart cursor-pointer"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                </svg>
+                <div >
+                  <svg
+                    onClick={addToWishList}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    className="bi bi-heart cursor-pointer"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                  </svg>
+                </div>
               </div>
               <div className="">
                 <div className=" items-baseline flex flex-wrap relative">

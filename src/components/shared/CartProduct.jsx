@@ -5,7 +5,7 @@ import { products } from "../../data";
 export const CartProduct = ({ id, add, no, remove, del }) => {
   const [opacity, setOpacity] = useState(false);
 
-  const product = products.find((p) => p.id === id);
+  const product = products.find((p) => p.id === id); 
 
   const toggleOpacity = () => {
     setOpacity(!opacity);
