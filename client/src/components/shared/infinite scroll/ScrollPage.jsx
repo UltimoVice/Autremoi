@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const ScrollPage = () => {
   const [speed, setSpeed] = useState(100000);
-const [products] = useFetchServer()
+// const [products] = useFetchServer()
 //   const handleSpeed0 = () => {
 //     setSpeed(0);
 //   };
