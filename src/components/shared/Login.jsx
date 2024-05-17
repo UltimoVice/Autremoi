@@ -37,7 +37,7 @@ const Login = () => {
           <input
             id="email"
             className={inputClass}
-            type="text"
+            type="email"
             value={email}
             onChange={handleEmailChange}
           />
