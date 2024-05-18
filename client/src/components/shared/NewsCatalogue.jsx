@@ -3,7 +3,7 @@ import { CatalogueProduct } from "./CatalogueProduct";
 import useFetch from "../../hooks/useFetch";
 
 const NewsCatalogue = () => {
-  const { data: products } = useFetch();
+  const { products } = useFetch();
   return (
     <div className="">
       <div className="flex items-center justify-center">

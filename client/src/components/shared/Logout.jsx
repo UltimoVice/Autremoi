@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, selectUser } from "../features/userSlice";
 
@@ -10,6 +10,8 @@ const Logout = () => {
 
     dispatch(logout());
   };
+
+  
 
   return (
     <div>

@@ -1,11 +1,12 @@
 import Scroll from "./Scroll";
 import "./scroll.css";
-import { products } from "../../../data";
+import  useFetch  from "../../../hooks/useFetch";
 import { useEffect, useState } from "react";
 // import useFetchServer from "../../../hooks/useFetchServer";
 
 const ScrollPage = () => {
   const [speed, setSpeed] = useState(100000);
+  const {products} = useFetch()
 // const [products] = useFetchServer()
 //   const handleSpeed0 = () => {
 //     setSpeed(0);
