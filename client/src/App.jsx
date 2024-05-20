@@ -18,6 +18,11 @@ import { selectUser } from "./components/features/userSlice";
 import Logout from "./components/shared/Logout";
 import WishListPage from "./pages/WishListPage";
 
+import Login from './features/auth/Login'
+import Welcome from './features/auth/Welcome'
+import RequireAuth from './features/auth/RequireAuth'
+import UsersList from './features/users/UsersList'
+
 function App() {
   const user = useSelector(selectUser)
 
@@ -26,7 +31,15 @@ function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
-          <Route path="login" element={user ? <Logout/> : <LoginPage />} />
+          {/* <Route path="login" element={user ? <Logout/> : <LoginPage />} /> */}
+          <Route path="login" element={<Login />} />
+          {/* protected Routes */}
+          <Route element={<RequireAuth />}>
+            <Route path="welcome" element={<Welcome />} />
+            <Route path="userslist" element={<UsersList />} />
+          </Route>
+          
+          
           <Route path="cart" element={<CartPayment />} />
 
           <Route path="wishlist" element={<WishListPage />} />

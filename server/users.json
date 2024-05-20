@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "img": "src/assets/User/SerenaSmith.jpg",
+      "username": "SerenaSmith",
+      "email": "serenasmith@example.com",
+      "amount": "7200",
+      "password": 1111
+    },
+    {
+      "id": 2,
+      "img": "src/assets/User/MaxPower88.jpg",
+      "username": "MaxPower88",
+      "email": "maxpower88@email.com",
+      "amount": "5400",
+      "password": 1111
+    },
+    {
+      "id": 3,
+      "img": "src/assets/User/LilyRose22.jpg",
+      "username": "LilyRose22",
+      "email": "lilyrose22@example.net",
+      "amount": "4500",
+      "password": 1111
+    },
+    {
+      "id": 4,
+      "img": "src/assets/User/Alex3000.jpg",
+      "username": "Alex3000",
+      "email": "alexgamer3000@emailprovider.org",
+      "amount": "4050",
+      "password": 1111
+    },
+    {
+      "id": 5,
+      "img": "src/assets/User/SarahJenkins99.jpg",
+      "username": "SarahJenkins99",
+      "email": "sarah.jenkins99@example.com",
+      "amount": "3150",
+      "password": 1111
+    },
+    {
+      "id": 6,
+      "img": "src/assets/User/Fashionista123.jpg",
+      "username": "Fashionista123",
+      "email": "fashionista123@example.com",
+      "amount": "3000",
+      "password": 1111
+    },
+    {
+      "id": 7,
+      "img": "src/assets/User/ChicStyle22.jpg",
+      "username": "ChicStyle22",
+      "email": "chicstyle22@emailprovider.net",
+      "amount": "2860",
+      "password": 1111
+    }
+  ]
