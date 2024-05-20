@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { products } from "../../data";
+import useFetch from "../../hooks/useFetch";
 
 const WishListProduct = ({ id, del }) => {
   const [opacity, setOpacity] = useState(false);
+  const {products} = useFetch()
 
   const product = products.find((p) => p.id === id);
 

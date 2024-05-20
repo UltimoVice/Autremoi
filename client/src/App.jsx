@@ -17,24 +17,32 @@ import { useSelector } from "react-redux";
 import { selectUser } from "./components/features/userSlice";
 import Logout from "./components/shared/Logout";
 import WishListPage from "./pages/WishListPage";
+import PaymentForm from "./components/shared/PaymentForm";
+import { Elements } from '@stripe/react-stripe-js';
+import stripePromise from "./config/stripeConfig";
+
 
 function App() {
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser);
 
   return (
     <div className="overflow-x-hidden">
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="" element={<Home />} />
-          <Route path="login" element={user ? <Logout/> : <LoginPage />} />
+          <Route path="login" element={user ? <Logout /> : <LoginPage />} />
           <Route path="cart" element={<CartPayment />} />
-
+          <Route path="payment" element={
+            <Elements stripe={stripePromise}>
+              <PaymentForm />
+            </Elements>
+          } />
           <Route path="wishlist" element={<WishListPage />} />
           <Route path="news" element={<NewsCatalogue />} />
           <Route path="products/:id" element={<Product />} />
-          <Route path="story" element={<PageStory/>}/>
-          <Route path="terms" element={<TermP/>}/>
-          <Route path="privacy" element={<PrivacyP/>}/>
+          <Route path="story" element={<PageStory />} />
+          <Route path="terms" element={<TermP />} />
+          <Route path="privacy" element={<PrivacyP />} />
         </Route>
         <Route path="/prods" element={<AdminLayout />}>
           <Route path="" element={<Products />} />
