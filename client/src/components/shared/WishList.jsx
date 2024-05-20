@@ -21,10 +21,6 @@ const WishList = () => {
     localStorage.setItem("wishList", JSON.stringify(wishList));
   }, [wishList]);
 
-  // useEffect(() => {
-  //   setSubTotal(cart && cart.reduce((a, item) => (a + item.price/100, 0)))
-  // }, [cart])
-
   return (
     <div className="w-full flex justify-center items-center">
       <div className="w-full flex flex-col justify-center items-center">
@@ -36,7 +32,7 @@ const WishList = () => {
             </div>
         )}
 
-        {wishList >= 1 &&
+        {wishList.length >= 1 &&
           wishList.map((product, i) => (
             <WishListProduct
               key={product.sku}
