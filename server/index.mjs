@@ -1,8 +1,13 @@
-const express = require("express");
-const products = require("./products.json");
-const users = require("./users.json");
-const cors = require("cors");
-import {login} from "./controllers/users.js"
+// const express = require("express");
+// const products = require("./products.json");
+// const users = require("./users.json");
+// const cors = require("cors");
+// import {login} from "./controllers/users.js"
+import express from "express"
+import products from "./products.json" assert{type: "json"}
+import users from "./users.json" assert{type: "json"}
+import cors from "cors"
+
 
 const app = express();
 const port = 3000;
@@ -49,7 +54,7 @@ app.get('/protected', authenticateToken, (req, res) => {
   res.send('This is a protected route');
 });
 
-app.post("/api/users/login", login)
+// app.post("/api/users/login", login)
 
 
 
