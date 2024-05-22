@@ -40,7 +40,7 @@ const rows = [
       "Stile distintivo",
     ],
     sku: "93724581063",
-    images: "src/assets/A-Line of Liberty.jpg",
+    images: "../src/assets/A-Line of Liberty.jpg",
     price: 23000, // prezzo in centesimi
   },
   {
@@ -57,7 +57,7 @@ const rows = [
       "Qualità superiore",
     ],
     sku: "50392761845",
-    images: "src/assets/Minimal Chic.jpg",
+    images: "../src/assets/Minimal Chic.jpg",
     price: 30000, // prezzo in centesimi
   },
   {
@@ -74,7 +74,7 @@ const rows = [
       "Finitura superba",
     ],
     sku: "21609483570",
-    images: "src/assets/Robe de Soirée Enchantée.jpg",
+    images: "../src/assets/Robe de Soirée Enchantée.jpg",
     price: 47000, // prezzo in centesimi
   },
   {
@@ -90,7 +90,7 @@ const rows = [
       "Ergonomia ottimale",
     ],
     sku: "89035617249",
-    images: "src/assets/Silk Dream.jpg",
+    images: "../src/assets/Silk Dream.jpg",
     price: 35000, // prezzo in centesimi
   },
   {
@@ -107,7 +107,7 @@ const rows = [
       "Originalità inconfondibile",
     ],
     sku: "64782150398",
-    images: "src/assets/Merveille Crépusculaire.jpg",
+    images: "../src/assets/Merveille Crépusculaire.jpg",
     price: 20000, // prezzo in centesimi
   },
   {
@@ -123,7 +123,7 @@ const rows = [
       "Creatività senza confini",
     ],
     sku: "15248976320",
-    images: "src/assets/Crystal Cage.jpg",
+    images: "../src/assets/Crystal Cage.jpg",
     price: 27000, // prezzo in centesimi
   },
   {
@@ -140,7 +140,7 @@ const rows = [
       "Esclusività nei materiali",
     ],
     sku: "43627198504",
-    images: "src/assets/Fleur de Glace.jpg",
+    images: "../src/assets/Fleur de Glace.jpg",
     price: 45000, // prezzo in centesimi
   },
   {
@@ -156,7 +156,7 @@ const rows = [
       "Curatissima manifattura",
     ],
     sku: "79530214876",
-    images: "src/assets/Sérénité Astrale.jpg",
+    images: "../src/assets/Sérénité Astrale.jpg",
     price: 42000, // prezzo in centesimi
   },
   {
@@ -172,7 +172,7 @@ const rows = [
       "Piacere nel tocco",
     ],
     sku: "30985467218",
-    images: "src/assets/Starry Ball.jpg",
+    images: "../src/assets/Starry Ball.jpg",
     price: 30000, // prezzo in centesimi
   },
   {
@@ -189,7 +189,7 @@ const rows = [
       "Originalità riconoscibile",
     ],
     sku: "51843629705",
-    images: "src/assets/Enchantement Lunaire.jpg",
+    images: "../src/assets/Enchantement Lunaire.jpg",
     price: 12000, // prezzo in centesimi
   },
   {
@@ -205,7 +205,7 @@ const rows = [
       "Idea seducente",
     ],
     sku: "67492018356",
-    images: "src/assets/Draperie d'Amour.jpg",
+    images: "../src/assets/Draperie d'Amour.jpg",
     price: 39000, // prezzo in centesimi
   },
   {
@@ -221,7 +221,7 @@ const rows = [
       "Eccellenza tessile",
     ],
     sku: "28015763490",
-    images: "src/assets/Twilight Charm.jpg",
+    images: "../src/assets/Twilight Charm.jpg",
     price: 26000, // prezzo in centesimi
   },
   {
@@ -238,7 +238,7 @@ const rows = [
       "Dettagli curatissimi",
     ],
     sku: "92760814523",
-    images: "src/assets/Dawn Jewel.jpg",
+    images: "../src/assets/Dawn Jewel.jpg",
     price: 28000, // prezzo in centesimi
   },
   {
@@ -255,7 +255,7 @@ const rows = [
       "Libertà di movimento",
     ],
     sku: "37568942170",
-    images: "src/assets/Voile de Neige.jpg",
+    images: "../src/assets/Voile de Neige.jpg",
     price: 17000, // prezzo in centesimi
   },
   {
@@ -272,7 +272,7 @@ const rows = [
       "Eleganza autentica",
     ],
     sku: "81094673258",
-    images: "src/assets/Night Magic.jpg",
+    images: "../src/assets/Night Magic.jpg",
     price: 33000, // prezzo in centesimi
   },
   {
@@ -289,7 +289,7 @@ const rows = [
       "Visione unica",
     ],
     sku: "45203781690",
-    images: "src/assets/Pearl Symphony.jpg",
+    images: "../src/assets/Pearl Symphony.jpg",
     price: 30000, // prezzo in centesimi
   },
   {
@@ -305,7 +305,7 @@ const rows = [
       "Eccellenza dei materiali",
     ],
     sku: "13697824500",
-    images: "src/assets/Fable de Velours.jpg",
+    images: "../src/assets/Fable de Velours.jpg",
     price: 37000, // prezzo in centesimi
   },
   {
@@ -322,7 +322,7 @@ const rows = [
       "Finitura impeccabile",
     ],
     sku: "58962340175",
-    images: "src/assets/Aurora Dance.jpg",
+    images: "../src/assets/Aurora Dance.jpg",
     price: 47000, // prezzo in centesimi
   },
   {
@@ -339,7 +339,7 @@ const rows = [
       "Piacere nel contatto con la pelle",
     ],
     sku: "70635891423",
-    images: "src/assets/Golden Weave.jpg",
+    images: "../src/assets/Golden Weave.jpg",
     price: 44000, // prezzo in centesimi
   },
   {
@@ -355,7 +355,7 @@ const rows = [
       "Originalità distintiva",
     ],
     sku: "94027158326",
-    images: "src/assets/Splendeur Diamantée.jpg",
+    images: "../src/assets/Splendeur Diamantée.jpg",
     price: 35000, // prezzo in centesimi
   },
 ];

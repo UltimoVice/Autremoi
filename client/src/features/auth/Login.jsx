@@ -32,7 +32,7 @@ const Login = () => {
             dispatch(setCredentials({ ...userData, user }))
             setUser('')
             setPwd('')
-            navigate('/welcome')
+            navigate('/admin')
         } catch (err) {
             if (!err?.originalStatus) {
                 // isLoading: true until timeout occurs
@@ -53,10 +53,8 @@ const Login = () => {
     const handlePwdInput = (e) => setPwd(e.target.value)
 
     const content = isLoading ? <h1>Loading...</h1> : (
-        <section className="login">
+        <section className="login flex justify-center p-8 flex-col items-center">
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-
-            <h1>Employee Login</h1>
 
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
@@ -68,6 +66,7 @@ const Login = () => {
                     onChange={handleUserInput}
                     autoComplete="off"
                     required
+                    className='bg-white border-b-2 border-black w-full text-black mb-6'
                 />
 
                 <label htmlFor="password">Password:</label>
@@ -77,8 +76,9 @@ const Login = () => {
                     onChange={handlePwdInput}
                     value={pwd}
                     required
+                    className='bg-white border-b-2 border-black w-full text-black mb-6'
                 />
-                <button>Sign In</button>
+                <button className='bg-black text-white h-[48px] px-5 w-max-[280px]'>Login</button>
             </form>
         </section>
     )

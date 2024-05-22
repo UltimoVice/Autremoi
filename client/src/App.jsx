@@ -34,12 +34,6 @@ function App() {
           {/* <Route path="login" element={user ? <Logout/> : <LoginPage />} /> */}
           <Route path="login" element={<Login />} />
           {/* protected Routes */}
-          <Route element={<RequireAuth />}>
-            <Route path="welcome" element={<Welcome />} />
-            <Route path="userslist" element={<UsersList />} />
-          </Route>
-          
-          
           <Route path="cart" element={<CartPayment />} />
 
           <Route path="wishlist" element={<WishListPage />} />
@@ -49,11 +43,11 @@ function App() {
           <Route path="terms" element={<TermP/>}/>
           <Route path="privacy" element={<PrivacyP/>}/>
         </Route>
-        <Route path="/prods" element={<AdminLayout />}>
-          <Route path="" element={<Products />} />
-        </Route>
         <Route path="/admin" element={<AdminLayout />}>
-          <Route path="" element={<HomeDashboard />} />
+          <Route element={<RequireAuth />}>
+            <Route path="" element={<HomeDashboard />} />
+            <Route path="prods" element={<Products />} />
+          </Route>
         </Route>
       </Routes>
     </div>

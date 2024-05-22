@@ -28,7 +28,7 @@ const DataTable = (props) => {
               >
                 <img
                   className="w-5 h-5"
-                  src="src/assets/Admin/trash.svg"
+                  src="../src/assets/Admin/trash.svg"
                   alt=""
                 />
               </button>
